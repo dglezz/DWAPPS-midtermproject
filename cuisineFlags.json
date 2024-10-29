@@ -1,0 +1,18 @@
+{
+  "Italian": {
+    "flag": "🇮🇹",
+    "description": "Known for its rich flavors, pastas, and pizzas."
+  },
+  "Mexican": {
+    "flag": "🇲🇽",
+    "description": "Famous for its bold flavors and colorful dishes like tacos and guacamole."
+  },
+  "Chinese": {
+    "flag": "🇨🇳",
+    "description": "Loved for stir-fry, dumplings, and a perfect balance of flavors."
+  },
+  "Indian": {
+    "flag": "🇮🇳",
+    "description": "Spicy and flavorful with rich curries and fragrant rice dishes."
+  }
+}
