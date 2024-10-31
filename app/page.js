@@ -1,29 +1,21 @@
-import Header from "./components/Header";
-import RecipeCard from "./components/RecipeCard";
-import styles from "./page.module.css";
-import cuisineData from "../public/cuisineFlags.json"
+import RecipeHub from "./components/Cuisine";
 
-export default async function Recipe() {
-  
-  const queryURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.FOOD_API_KEY}&cuisine=${cuisine}&minReadyTime=30&maxReadyTime=40&number=6&includeNutrition=true`;
-  const request = await fetch(queryURL);
-  const recipeData = await request.json();
+export default function Page() {
+  // const [selectedCuisine, setSelectedCuisine] = useState(null);
+  // const [recipes, setRecipes] = useState([]);
+  const queryURLWithEnv = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.FOOD_API_KEY}`;
+  // const fetchRecipes = useCallback(async (cuisine) => {
+  //   const queryURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.FOOD_API_KEY}&cuisine=${cuisine}&minReadyTime=30&maxReadyTime=40&number=6&includeNutrition=true`;
+  //   const response = await fetch(queryURL);
+  //   const recipeData = await response.json();
+  //   console.log("Fetched Recipe Data:", recipeData);
 
-  console.log(recipeData.results);
+  //   setRecipes(recipeData.results || []);
+  //   setSelectedCuisine(cuisine);
 
-  return (
-    <div className={styles.page}>
-      <Header />
-      <main className={styles.main}>
-        {recipeData.results.map((recipe) => (
-          <RecipeCard
-            title={recipe.title}
-            image={recipe.image}
-            readyInMinutes={recipe.readyInMinutes}
-            servings={recipe.servings}
-          />
-        ))}
-      </main>
-    </div>
-  );
+  //   console.log("Selected Cuisine:", cuisine);
+  //   console.log("Recipes State:", recipeData.results);
+  // }, []);
+
+  return <RecipeHub queryURLWithEnv={queryURLWithEnv} />;
 }
